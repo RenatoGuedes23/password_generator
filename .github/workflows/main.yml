@@ -2,7 +2,7 @@ name: "Terraform"
 
 on:
   push: 
-    branches: ["develop"]
+    branches: ["main"]
     paths: ["terraform/**"]
   workflow_dispatch:
   
