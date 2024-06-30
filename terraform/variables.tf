@@ -51,3 +51,12 @@ variable "aws_eks_instance_types" {
   type        = set(string)
   nullable    = false
 }
+
+variable "aws_project_tags" {
+  description = "value"
+  type        = map(any)
+  nullable    = false
+}
+
+
+

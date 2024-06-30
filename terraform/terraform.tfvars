@@ -7,3 +7,8 @@ aws_public_subnet      = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
 aws_eks_name           = "gerador-dev"
 aws_eks_version        = "1.27"
 aws_eks_instance_types = ["t3.medium"]
+aws_project_tags = {
+    Terraform = "true"
+    Environment = "produção"
+    Project = "gerador"
+}
