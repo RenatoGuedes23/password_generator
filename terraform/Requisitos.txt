@@ -22,3 +22,7 @@ Modo de Implementação: O cluster Kubernetes deve ser inicializado corretamente
 Qualidade do Código: O código Terraform deve ser claro, bem organizado e seguir as melhores práticas de desenvolvimento e reaproveitamento.
 Funcionalidade da Pipeline: A pipeline de deve funcionar sem erros, realizando todas as tarefas especificadas.
 Documentação: A documentação deve ser completa, clara e fornecer todos os detalhes necessários para que outros profissionais possam reproduzir o processo.
+
+
+
+#testeteste
