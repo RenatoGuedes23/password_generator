@@ -13,7 +13,7 @@ module "vpc" {
   single_nat_gateway   = true
   enable_dns_hostnames = true
 
-  tags = merge (var.aws_project_tags,  {
+  tags = merge(var.aws_project_tags, {
     "kubernetes.io/cluster/${var.aws_eks_name}" = "shared"
     }
   )
@@ -21,14 +21,14 @@ module "vpc" {
   public_subnet_tags = {
 
     "kubernetes.io/cluster/${var.aws_eks_name}" = "shared"
-    "kubernetes.io/role/elb"     = 1
+    "kubernetes.io/role/elb"                    = 1
 
   }
 
   private_subnet_tags = {
 
     "kubernetes.io/cluster/${var.aws_eks_name}" = "shared"
-    "kubernetes.io/role/internal-elb"     = 1
+    "kubernetes.io/role/internal-elb"           = 1
 
   }
 
@@ -61,11 +61,11 @@ module "gerador-dev" {
 
       tags = var.aws_project_tags
 
-      }
-
     }
 
-   tags = var.aws_project_tags
+  }
+
+  tags = var.aws_project_tags
 
 }
 

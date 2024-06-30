@@ -8,7 +8,7 @@ aws_eks_name           = "gerador-dev"
 aws_eks_version        = "1.27"
 aws_eks_instance_types = ["t3.medium"]
 aws_project_tags = {
-    Terraform = "true"
-    Environment = "produção"
-    Project = "gerador"
+  Terraform   = "true"
+  Environment = "produção"
+  Project     = "gerador"
 }
