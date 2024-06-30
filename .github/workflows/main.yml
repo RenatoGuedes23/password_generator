@@ -1,0 +1,21 @@
+name: "Terraform"
+
+on:
+  push: 
+    branches: ["develop"]
+    paths: ["terraform/**"]
+  workflow_dispatch:
+  
+jobs:
+  terraform:
+    name: "Terraform apply"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Configure AWS Credentials" Action for GitHub Actions
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-1
+          AWS Access Key ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS Secret Access Key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
+
+    
