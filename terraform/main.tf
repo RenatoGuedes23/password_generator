@@ -2,11 +2,11 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.1.1"
 
-  name            = "minha_vpc"
-  cidr            = "10.0.0.0/16"
-  private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  public_subnets  = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
-  azs             = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  name            = var.aws_eks_name
+  cidr            = var.aws_vpc_cidr
+  private_subnets = var.aws_private_subnet
+  public_subnets  = var.aws_public_subnet
+  azs             = var.aws_vpc_azs
 
   enable_nat_gateway   = true
   enable_vpn_gateway   = true
@@ -42,8 +42,8 @@ module "gerador-dev" {
   source  = "terraform-aws-modules/eks/aws"
   version = "19.16.0"
 
-  cluster_name    = "gerador-dev"
-  cluster_version = "1.27"
+  cluster_name    = var.aws_eks_name
+  cluster_version = var.aws_eks_version
 
 
   subnet_ids                     = module.vpc.private_subnets
@@ -58,13 +58,10 @@ module "gerador-dev" {
       max_size     = 3
       desired_size = 3
 
-      instance_types = ["t3.medium"]
+      instance_types = var.aws_eks_instance_types
+
     }
 
   }
 
 }
-
-
-
-
